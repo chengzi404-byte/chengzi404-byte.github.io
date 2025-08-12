@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Editor - 社区论坛</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <header id="navbar" class="w-full top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+                            <i class="fa fa-code text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Phoenix Editor</span>
+                    </a>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="../index.html#features" class="text-gray-600 hover:text-primary transition-colors">特性</a>
+                    <a href="../index.html#installation" class="text-gray-600 hover:text-primary transition-colors">安装</a>
+                    <a href="../index.html#usage" class="text-gray-600 hover:text-primary transition-colors">使用方法</a>
+                    <a href="../index.html#modules" class="text-gray-600 hover:text-primary transition-colors">模块</a>
+                    <a href="bbs.html" class="text-primary font-medium">社区论坛</a>
+                    <a href="../index.html#faq" class="text-gray-600 hover:text-primary transition-colors">问答</a>
+                </nav>
+                
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="../index.html#download" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors">
+                        下载
+                    </a>
+                    <a href="https://gitee.com/creative-and-dream/phoenix-editor" target="_blank" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md transition-colors flex items-center gap-2">
+                        <i class="fa fa-github"></i>
+                        <span>Gitee</span>
+                    </a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-primary">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="../index.html#features" class="block text-gray-600 hover:text-primary transition-colors py-2">特性</a>
+                <a href="../index.html#installation" class="block text-gray-600 hover:text-primary transition-colors py-2">安装</a>
+                <a href="../index.html#usage" class="block text-gray-600 hover:text-primary transition-colors py-2">使用方法</a>
+                <a href="../index.html#modules" class="block text-gray-600 hover:text-primary transition-colors py-2">模块</a>
+                <a href="bbs.html" class="block text-primary font-medium py-2">社区论坛</a>
+                <a href="../index.html#faq" class="block text-gray-600 hover:text-primary transition-colors py-2">问答</a>
+                <div class="flex flex-col gap-2 pt-2">
+                    <a href="../index.html#download" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors text-center">
+                        下载
+                    </a>
+                    <a href="https://gitee.com/creative-and-dream/phoenix-editor" target="_blank" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md transition-colors flex items-center justify-center gap-2">
+                        <i class="fa fa-github"></i>
+                        <span>Gitee</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 论坛跳转提示 -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-8 text-center">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa fa-comments text-primary text-2xl"></i>
+                </div>
+                
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">访问社区论坛</h2>
+                <p class="text-gray-600 mb-8">
+                    由于安全限制，论坛内容无法直接在当前页面显示。请点击下方按钮访问我们在 Gitee 上的社区讨论区。
+                </p>
+                
+                <a href="https://gitee.com/creative-and-dream/phoenix-editor/issues" target="_blank" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md text-lg font-medium transition-colors mb-6">
+                    <i class="fa fa-external-link mr-2"></i>前往 Gitee Issues 反馈
+                </a>
+                
+                <div class="bg-gray-50 p-4 rounded-lg text-left">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i class="fa fa-info-circle text-primary mr-2"></i>论坛功能
+                    </h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                            <span>提问求助与问题解答</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                            <span>功能建议与讨论</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                            <span>BUG反馈与跟踪</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-secondary mt-1 mr-2"></i>
+                            <span>使用经验与技巧分享</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+    
